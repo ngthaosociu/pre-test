@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pre-test — Đăng nhập / Đăng ký</title>
+
+  <!-- Phần 2: em tự viết file style.css -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Phần 1 - Câu 2: giải thích vì sao các script dưới đây dùng "defer" -->
+  <script src="data.js" defer></script>
+  <script src="user-utils.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <!-- ===== FORM ĐĂNG NHẬP ===== -->
+    <section class="auth-card" id="login-section">
+      <h1 class="auth-card__title">Đăng nhập</h1>
+
+      <form id="login-form" novalidate>
+        <div class="form-field">
+          <label for="login-username">Tên đăng nhập</label>
+          <input type="text" id="login-username" name="username" autocomplete="username" />
+        </div>
+
+        <div class="form-field">
+          <label for="login-password">Mật khẩu</label>
+          <input type="password" id="login-password" name="password" autocomplete="current-password" />
+        </div>
+
+        <button type="submit" class="btn btn--primary">Đăng nhập</button>
+      </form>
+
+      <p class="auth-card__switch">
+        Chưa có tài khoản?
+        <a href="#" id="show-register">Đăng ký</a>
+      </p>
+    </section>
+
+    <!-- ===== FORM ĐĂNG KÝ (ẩn mặc định) ===== -->
+    <section class="auth-card" id="register-section" hidden>
+      <h1 class="auth-card__title">Đăng ký</h1>
+
+      <form id="register-form" novalidate>
+        <div class="form-field">
+          <label for="reg-fullname">Họ và tên</label>
+          <input type="text" id="reg-fullname" name="fullName" autocomplete="name" />
+        </div>
+
+        <div class="form-field">
+          <label>Ngày sinh</label>
+          <input type="date" id="reg-birthdate" name="birthDate" />
+        </div>
+
+        <div class="form-field">
+          <label for="reg-username">Tên đăng nhập</label>
+          <input type="text" id="reg-username" name="username" autocomplete="username" />
+        </div>
+
+        <div class="form-field">
+          <label for="reg-password">Mật khẩu</label>
+          <input type="password" id="reg-password" name="password" autocomplete="new-password" />
+        </div>
+
+        <div class="form-field">
+          <label for="reg-confirm">Nhập lại mật khẩu</label>
+          <input type="password" id="reg-confirm" name="confirmPassword" autocomplete="new-password" />
+        </div>
+
+        <button type="submit" class="btn btn--primary">Tạo tài khoản</button>
+      </form>
+
+      <p class="auth-card__switch">
+        Đã có tài khoản?
+        <a href="#" id="show-login">Đăng nhập</a>
+      </p>
+    </section>
+
+    <!-- ===== THỐNG KÊ (Phần 4 — hiện sau khi đăng nhập thành công) ===== -->
+    <section class="auth-card" id="dashboard-section" hidden>
+      <h1 class="auth-card__title">Xin chào, <span id="welcome-name"></span></h1>
+      <ul id="stats-list" class="stats"></ul>
+      <button type="button" class="btn" id="logout-btn">Đăng xuất</button>
+    </section>
+
+  </main>
+</body>
+</html>
