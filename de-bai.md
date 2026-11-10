@@ -132,4 +132,4 @@ Thêm một ô tìm kiếm trong phần Thống kê dùng `searchByName` để h
 - [x] Đăng ký trùng tên đăng nhập / mật khẩu nhập lại sai đều có thông báo.
 - [x] Đăng nhập được bằng tài khoản vừa tạo.
 - [ ] Không còn `console.log` thừa (trừ phần tự kiểm tra), không có lỗi trong Console.
-- [ ] `NOTES.md` đầy đủ; mỗi phần có ít nhất 1 commit.
+- [x] `NOTES.md` đầy đủ; mỗi phần có ít nhất 1 commit.

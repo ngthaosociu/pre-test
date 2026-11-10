@@ -27,3 +27,5 @@ Ans: Sự khác biệt của `defer` và `async`
 
 Vì sao không nên báo riêng "sai tên đăng nhập" hay "sai mật khẩu"?
 -Nếu thông báo riêng có thể dễ gây ra việc bị người khác nắm được 1 trong 2 thông tin, từ đó bị lộ tài khoản cá nhân.
+
+phần bonus em chưa làm do em thấy hơi khó hiểu, còn lại em nghĩ là ổn rui nên đã làm full 4 phần ạ :3
