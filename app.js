@@ -1,3 +1,4 @@
+
 const loginSection = document.getElementById("login-section");
 const registerSection = document.getElementById("register-section");
 const dashboardSection = document.getElementById("dashboard-section");
@@ -7,6 +8,10 @@ const registerForm = document.getElementById("register-form");
 
 const showRegister = document.getElementById("show-register");
 const showLogin = document.getElementById("show-login");
+const logoutBtn = document.getElementById("logout-btn");
+
+const searchInput = document.getElementById("search-name");
+const searchResults = document.getElementById("search-results");
 
 showRegister.addEventListener("click", function(event) {
     event.preventDefault();
@@ -64,6 +69,7 @@ registerForm.addEventListener("submit", function(event) {
         const year = TODAY.getFullYear();
         const month = String(TODAY.getMonth() + 1).padStart(2, "0");
         const day = String(TODAY.getDate()).padStart(2, "0");
+
         todayString = year + "-" + month + "-" + day;
     } else {
         todayString = String(TODAY).slice(0, 10);
@@ -77,7 +83,10 @@ registerForm.addEventListener("submit", function(event) {
     let isExist = false;
 
     for (let i = 0; i < users.length; i++) {
-        if (users[i].username.toLowerCase() === username.toLowerCase()) {
+        if (
+            users[i].username.toLowerCase() ===
+            username.toLowerCase()
+        ) {
             isExist = true;
             break;
         }
@@ -92,6 +101,7 @@ registerForm.addEventListener("submit", function(event) {
         alert("Mật khẩu phải có ít nhất 6 ký tự");
         return;
     }
+
     if (password !== confirmPassword) {
         alert("Mật khẩu nhập lại không khớp");
         return;
@@ -107,7 +117,9 @@ registerForm.addEventListener("submit", function(event) {
     users.push(newUser);
 
     alert("Đăng ký thành công!");
+
     registerForm.reset();
+
     registerSection.hidden = true;
     loginSection.hidden = false;
 });
@@ -127,6 +139,7 @@ loginForm.addEventListener("submit", function(event) {
         alert("Vui lòng nhập Mật khẩu");
         return;
     }
+
     let foundUser = null;
 
     for (let i = 0; i < users.length; i++) {
@@ -148,12 +161,16 @@ loginForm.addEventListener("submit", function(event) {
     registerSection.hidden = true;
     dashboardSection.hidden = false;
 
-    document.getElementById("welcome-name").textContent = foundUser.fullName;
+    document.getElementById("welcome-name").textContent =
+        foundUser.fullName;
+
+    searchInput.value = "";
+    searchResults.innerHTML = "";
+
+    renderStats();
 
     loginForm.reset();
 });
-
-const logoutBtn = document.getElementById("logout-btn");
 
 logoutBtn.addEventListener("click", function() {
     dashboardSection.hidden = true;
@@ -161,4 +178,85 @@ logoutBtn.addEventListener("click", function() {
     loginSection.hidden = false;
 
     loginForm.reset();
+
+    searchInput.value = "";
+    searchResults.innerHTML = "";
 });
+
+function renderStats() {
+    const statsList = document.getElementById("stats-list");
+
+    const total = users.length;
+    const countA = countByFirstLetter(users, "A");
+    const adults = countAdults(users, TODAY);
+
+    const oldest = findOldest(users, TODAY);
+    const youngest = findYoungest(users, TODAY);
+
+    const average = getAverageAge(users, TODAY);
+    const groups = countByAgeGroup(users, TODAY);
+
+    let oldestText = "Chưa có dữ liệu";
+
+    if (oldest !== null) {
+        oldestText = oldest.fullName + " (" +
+            getAge(oldest.birthDate, TODAY) + " tuổi)";
+    }
+
+    let youngestText = "Chưa có dữ liệu";
+
+    if (youngest !== null) {
+        youngestText = youngest.fullName + " (" +
+            getAge(youngest.birthDate, TODAY) + " tuổi)";
+    }
+
+    const stats = [
+        "Tổng số người dùng: " + total,
+        'Số người có tên bắt đầu bằng "A": ' + countA,
+        "Số người từ 18 tuổi trở lên: " + adults,
+        "Lớn tuổi nhất: " + oldestText,
+        "Nhỏ tuổi nhất: " + youngestText,
+        "Tuổi trung bình: " + average.toFixed(1),
+        "Dưới 18: " + groups.under18 +
+        " · 18–30: " + groups.from18to30 +
+        " · Trên 30: " + groups.over30
+    ];
+
+    statsList.innerHTML = "";
+
+    stats.forEach(function(item) {
+        const li = document.createElement("li");
+        li.textContent = item;
+        statsList.appendChild(li);
+    });
+}
+
+function renderSearchResults() {
+    const keyword = searchInput.value.trim();
+
+    searchResults.innerHTML = "";
+
+    if (keyword === "") {
+        return;
+    }
+
+    const results = searchByName(users, keyword);
+
+    if (results.length === 0) {
+        const li = document.createElement("li");
+        li.textContent = "Không tìm thấy người dùng";
+        searchResults.appendChild(li);
+        return;
+    }
+
+    results.forEach(function(user) {
+        const li = document.createElement("li");
+
+        li.textContent = user.fullName + " (" +
+            getAge(user.birthDate, TODAY) + " tuổi)";
+
+        searchResults.appendChild(li);
+    });
+}
+
+searchInput.addEventListener("input", renderSearchResults);

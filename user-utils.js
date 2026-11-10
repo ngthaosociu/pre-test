@@ -26,7 +26,7 @@ function getAge(birthDate, today) {
 }
 
 function getFirstName(fullName) {
-    const words = fullName.trim().split(/\s+/\);
+    const words = fullName.trim().split(/\s+/);
     return words[words.length -1];
 }
 
@@ -55,7 +55,7 @@ function findOldest(users, today) {
     }
 
     return users.reduce(function(oldest, user) {
-        if (user,birthDate < oldest.birthDate) {
+        if (user.birthDate < oldest.birthDate) {
             return user;
         }
         return oldest;
@@ -68,7 +68,7 @@ function findYoungest(users, today) {
     }
 
     return users.reduce(function(youngest, user) {
-        if (user,birthDate > youngest.birthDate) {
+        if (user.birthDate > youngest.birthDate) {
             return user;
         }
         return youngest;

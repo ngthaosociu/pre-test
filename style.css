@@ -1,5 +1,3 @@
-
-/*CSS VARIABLES*/
 :root {
     --primary-color: #4f46e5;
     --primary-hover: #4338ca;
@@ -10,14 +8,12 @@
     --border-radius: 12px;
 }
 
-/*RESET CSS*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/*CAN GIUA BANG FLEXBOX*/
 body {
     font-family: Arial, sans-serif;
     background-color: var(--background-color);
@@ -47,7 +43,6 @@ CACH CAN GIUA KHAC: CSS GRID
 }
 */
 
-/*KHUNG DANG NHAP / DANG KY*/
 .auth-card {
     width: 100%;
     max-width: 360px;
@@ -57,12 +52,10 @@ CACH CAN GIUA KHAC: CSS GRID
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Dam bao section co hidden duoc an */
 .auth-card[hidden] {
     display: none;
 }
 
-/*TIEU DE*/
 .auth-card__title {
     text-align: center;
     font-size: 26px;
@@ -70,7 +63,6 @@ CACH CAN GIUA KHAC: CSS GRID
     color: var(--primary-color);
 }
 
-/*FORM*/
 .form-field {
     margin-bottom: 18px;
 }
@@ -94,13 +86,11 @@ CACH CAN GIUA KHAC: CSS GRID
                 box-shadow 0.2s;
 }
 
-/* Trang thai focus */
 .form-field input:focus {
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
 }
 
-/*NUT BAM*/
 .btn {
     display: block;
     width: 100%;
@@ -118,7 +108,6 @@ CACH CAN GIUA KHAC: CSS GRID
     color: white;
 }
 
-/* Trang thai hover */
 .btn--primary:hover {
     background-color: var(--primary-hover);
 }
@@ -128,7 +117,6 @@ CACH CAN GIUA KHAC: CSS GRID
     outline-offset: 3px;
 }
 
-/* Nut dang xuat */
 #logout-btn {
     background-color: #e5e7eb;
     color: var(--text-color);
@@ -138,7 +126,6 @@ CACH CAN GIUA KHAC: CSS GRID
     background-color: #d1d5db;
 }
 
-/*LIEN KET DANG KY / DANG NHAP*/
 .auth-card__switch {
     text-align: center;
     margin-top: 20px;
@@ -156,14 +143,12 @@ CACH CAN GIUA KHAC: CSS GRID
     text-decoration: underline;
 }
 
-/*THONG KE*/
 .stats {
     margin: 20px 0;
     padding-left: 20px;
     line-height: 1.8;
 }
 
-/*RESPONSIVE*/
 @media (max-width: 399px) {
     .page {
         padding: 15px;
@@ -178,4 +163,30 @@ CACH CAN GIUA KHAC: CSS GRID
     .auth-card__title {
         font-size: 24px;
     }
+}
+
+.stats {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.stats li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+#dashboard-section {
+    max-width: 500px;
+}
+
+#search-name {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#search-name:focus {
+    outline: 2px solid var(--primary-color);
+    border-color: var(--primary-color);
 }
