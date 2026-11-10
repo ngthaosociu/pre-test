@@ -1,7 +1,16 @@
 **Câu 1.** Thuộc tính `for` của thẻ `<label>` dùng để làm gì? Lợi ích với người dùng (kể cả người dùng trình đọc màn hình) là gì?
 Trong form **Đăng ký** của `index.html` có **một ô nhập mà label chưa được gắn đúng** — hãy tìm và sửa lại.
 Ans: Thuộc tính `for` dùng để liên kết rõ ràng nhãn đó với 1 phần tử điều khiển biểu mẫu thông qua giá trị `id` trùng khớp. Lợi ích với người dùng gồm: Tăng vùng tương tác, hỗ trợ tối đa cho trình đọc màn hình, cải thiện tính trợ năng
-
+Phần gắn chưa đúng là 
+`<div class="form-field">`
+          `<label> Ngày sinh</label>`
+          `<input type="date" id="reg-birthdate" name="birthDate" />`
+        `</div>`
+sửa thành:
+`<div class="form-field">`
+          `<label for="reg-birthdate"> Ngày sinh</label>`
+          `<input type="date" id="reg-birthdate" name="birthDate" />`
+        `</div>`
 
 **Câu 2.** Thẻ `<script>` có `defer` và `async` khác nhau thế nào? (Thời điểm tải, thời điểm chạy, thứ tự chạy.)
 Trong `index.html`, 3 file script được nạp bằng `defer`. Giải thích vì sao. Nếu đổi cả 3 thành `async` thì có thể xảy ra lỗi gì?
