@@ -1,0 +1,181 @@
+
+/*CSS VARIABLES*/
+:root {
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --background-color: #f3f4f6;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --border-color: #d1d5db;
+    --border-radius: 12px;
+}
+
+/*RESET CSS*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*CAN GIUA BANG FLEXBOX*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+.page {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/*
+CACH CAN GIUA KHAC: CSS GRID
+
+.page {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+*/
+
+/*KHUNG DANG NHAP / DANG KY*/
+.auth-card {
+    width: 100%;
+    max-width: 360px;
+    padding: 30px;
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Dam bao section co hidden duoc an */
+.auth-card[hidden] {
+    display: none;
+}
+
+/*TIEU DE*/
+.auth-card__title {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+}
+
+/*FORM*/
+.form-field {
+    margin-bottom: 18px;
+}
+
+.form-field label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-field input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s,
+                box-shadow 0.2s;
+}
+
+/* Trang thai focus */
+.form-field input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/*NUT BAM*/
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn--primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Trang thai hover */
+.btn--primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+/* Nut dang xuat */
+#logout-btn {
+    background-color: #e5e7eb;
+    color: var(--text-color);
+}
+
+#logout-btn:hover {
+    background-color: #d1d5db;
+}
+
+/*LIEN KET DANG KY / DANG NHAP*/
+.auth-card__switch {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.auth-card__switch a {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.auth-card__switch a:hover {
+    text-decoration: underline;
+}
+
+/*THONG KE*/
+.stats {
+    margin: 20px 0;
+    padding-left: 20px;
+    line-height: 1.8;
+}
+
+/*RESPONSIVE*/
+@media (max-width: 399px) {
+    .page {
+        padding: 15px;
+    }
+
+    .auth-card {
+        width: 100%;
+        max-width: 360px;
+        padding: 22px;
+    }
+
+    .auth-card__title {
+        font-size: 24px;
+    }
+}

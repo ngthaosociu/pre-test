@@ -127,7 +127,7 @@ Thêm một ô tìm kiếm trong phần Thống kê dùng `searchByName` để h
 ---
 
 ## Trước khi nộp — tự kiểm tra
-- [ ] Đã sửa label trong form Đăng ký (Phần 1, câu 1).
+- [x] Đã sửa label trong form Đăng ký (Phần 1, câu 1).
 - [ ] Khung luôn ở giữa màn hình khi đổi kích thước cửa sổ.
 - [ ] Đăng ký trùng tên đăng nhập / mật khẩu nhập lại sai đều có thông báo.
 - [ ] Đăng nhập được bằng tài khoản vừa tạo.

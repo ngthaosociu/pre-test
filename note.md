@@ -21,3 +21,6 @@ Ans: Sự khác biệt của `defer` và `async`
 
 -3 file được nạp bằng `defer` vì: đảm bảo đúng thứ tự được khai báo trong HTML, chạy sau khi HTML đã hoàn tất và tải song song trong khi đang parse HTML mà không chặn phân tích HTML.
 -Nếu đổi cả 3 thành `async` thì có thể sẽ có lỗi như: sai thứ tự thực thi, lỗi truy cập DOM.
+
+*Giải thích về căn giữa bằng Flexbox*
+-Lựa chọn Flexbox làm kiểu căn giữa chính vì đây là kiểu dàn trang tự cân đối kích thước của các nội dung bên trong để hiển thị trên mọi thiết bị mà không cần căn chỉnh quá nhiều.
