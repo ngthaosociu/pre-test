@@ -15,4 +15,5 @@ const users = [
   { username: 'baohuynh', password: 'Bao@1978', fullName: 'Huỳnh Quốc Bảo', birthDate: '1978-01-30' },
   { username: 'lananh', password: 'LanAnh@03', fullName: 'Nguyễn Thị Lan Anh', birthDate: '2003-09-09' },
   { username: 'khoatran', password: 'Khoa@2012', fullName: 'Trần Đăng Khoa', birthDate: '2012-06-01' },
+  { username: 'thaoluong', password: 'Thao@2005', fullName: 'Lương Ngọc Thảo', birthDate: '2005-04-12' },
 ];

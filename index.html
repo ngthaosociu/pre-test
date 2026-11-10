@@ -81,20 +81,56 @@
 
     <!-- ===== THỐNG KÊ (Phần 4 — hiện sau khi đăng nhập thành công) ===== -->
     <section class="auth-card" id="dashboard-section" hidden>
-      <h1 class="auth-card__title">Xin chào, <span id="welcome-name"></span></h1>
-      <ul id="stats-list" class="stats"></ul>
-      <div class="form-field">
-        <label for="search-name">Tìm kiếm người dùng</label>
-        <input
-            type="text"
-            id="search-name"
-            placeholder="Nhập họ tên cần tìm"
-        />
-    </div>
-    <ul id="search-results" class="stats"></ul>
-      <button type="button" class="btn" id="logout-btn">Đăng xuất</button>
-    </section>
+        <h1 class="auth-card__title">
+            Xin chào, <span id="welcome-name"></span>
+        </h1>
 
+        <ul id="stats-list" class="stats"></ul>
+
+        <div class="form-field">
+            <label for="search-name">Tìm kiếm người dùng theo tên</label>
+            <input
+                type="text"
+                id="search-name"
+                placeholder="Nhập họ tên cần tìm"
+            />
+        </div>
+
+        <ul id="search-results" class="stats"></ul>
+
+        <div class="form-field">
+            <label for="search-birthDate">Tìm theo năm sinh</label>
+            <input
+                type="number"
+                id="search-birthDate"
+                placeholder="Nhập năm sinh"
+            />
+        </div>
+
+        <div class="form-field">
+            <label for="search-age">Tìm theo số tuổi</label>
+            <input
+                type="number"
+                id="search-age"
+                placeholder="Nhập số tuổi"
+            />
+        </div>
+
+        <button type="button" class="btn" id="birthDate-btn">
+            Tìm kiếm
+        </button>
+
+        <button type="button" class="btn" id="nearest-birthday-btn">
+            Tìm người có sinh nhật gần nhất
+        </button>
+
+        <ul id="advanced-results" class="stats"></ul>
+
+        <button type="button" class="btn" id="logout-btn">
+            Đăng xuất
+        </button>
+    </section>
+    
   </main>
 </body>
 </html>

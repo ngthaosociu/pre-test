@@ -1,3 +1,4 @@
+
 :root {
     --primary-color: #4f46e5;
     --primary-hover: #4338ca;
@@ -31,18 +32,6 @@ body {
     padding: 20px;
 }
 
-/*
-CACH CAN GIUA KHAC: CSS GRID
-
-.page {
-    min-height: 100vh;
-    min-height: 100dvh;
-    display: grid;
-    place-items: center;
-    padding: 20px;
-}
-*/
-
 .auth-card {
     width: 100%;
     max-width: 360px;
@@ -61,6 +50,7 @@ CACH CAN GIUA KHAC: CSS GRID
     font-size: 26px;
     margin-bottom: 25px;
     color: var(--primary-color);
+    line-height: 1.4;
 }
 
 .form-field {
@@ -82,13 +72,18 @@ CACH CAN GIUA KHAC: CSS GRID
     border: 1px solid var(--border-color);
     border-radius: 8px;
     outline: none;
-    transition: border-color 0.2s,
-                box-shadow 0.2s;
+    background-color: #ffffff;
+    color: var(--text-color);
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .form-field input:focus {
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+.form-field input::placeholder {
+    color: #9ca3af;
 }
 
 .btn {
@@ -97,10 +92,19 @@ CACH CAN GIUA KHAC: CSS GRID
     padding: 12px;
     font-size: 16px;
     font-weight: bold;
+    font-family: inherit;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0);
 }
 
 .btn--primary {
@@ -115,15 +119,6 @@ CACH CAN GIUA KHAC: CSS GRID
 .btn:focus-visible {
     outline: 3px solid var(--primary-color);
     outline-offset: 3px;
-}
-
-#logout-btn {
-    background-color: #e5e7eb;
-    color: var(--text-color);
-}
-
-#logout-btn:hover {
-    background-color: #d1d5db;
 }
 
 .auth-card__switch {
@@ -143,50 +138,145 @@ CACH CAN GIUA KHAC: CSS GRID
     text-decoration: underline;
 }
 
-.stats {
-    margin: 20px 0;
-    padding-left: 20px;
-    line-height: 1.8;
+#dashboard-section {
+    max-width: 600px;
 }
 
-@media (max-width: 399px) {
+#dashboard-section .auth-card__title {
+    margin-bottom: 20px;
+}
+
+.stats {
+    list-style: none;
+    margin: 15px 0 25px;
+    padding: 0;
+}
+
+.stats li {
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+    font-size: 14px;
+    background-color: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-left: 3px solid var(--primary-color);
+    border-radius: 8px;
+    overflow-wrap: anywhere;
+}
+
+#stats-list {
+    margin-bottom: 25px;
+}
+
+#search-name,
+#search-birthDate,
+#search-age {
+    width: 100%;
+    border-radius: 8px;
+}
+
+#search-results,
+#advanced-results {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#search-results li,
+#advanced-results li {
+    background-color: #eef2ff;
+    border-left: 3px solid var(--primary-color);
+}
+
+#birthDate-btn {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+#birthDate-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+#nearest-birthday-btn {
+    background-color: #6366f1;
+    color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+#nearest-birthday-btn:hover {
+    background-color: #4f46e5;
+}
+
+#logout-btn {
+    background-color: #e5e7eb;
+    color: var(--text-color);
+    margin-top: 25px;
+}
+
+#logout-btn:hover {
+    background-color: #d1d5db;
+}
+
+.error-message {
+    display: block;
+    margin-top: 5px;
+    color: #dc2626;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.form-field input.input-error {
+    border-color: #dc2626;
+}
+
+.form-field input.input-error:focus {
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
+@media (max-width: 599px) {
     .page {
         padding: 15px;
     }
 
     .auth-card {
-        width: 100%;
-        max-width: 360px;
-        padding: 22px;
+        padding: 24px;
+    }
+
+    #dashboard-section {
+        max-width: 100%;
     }
 
     .auth-card__title {
         font-size: 24px;
     }
+
+    .stats li {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 12px;
+    }
 }
 
-.stats {
-    padding-left: 20px;
-    margin-bottom: 20px;
-}
+@media (max-width: 399px) {
+    .page {
+        padding: 10px;
+    }
 
-.stats li {
-    margin-bottom: 10px;
-    line-height: 1.5;
-}
+    .auth-card {
+        padding: 20px;
+    }
 
-#dashboard-section {
-    max-width: 500px;
-}
+    .auth-card__title {
+        font-size: 22px;
+    }
 
-#search-name {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#search-name:focus {
-    outline: 2px solid var(--primary-color);
-    border-color: var(--primary-color);
+    .form-field input {
+        font-size: 14px;
+    }
 }
