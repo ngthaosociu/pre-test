@@ -24,3 +24,6 @@ Ans: Sự khác biệt của `defer` và `async`
 
 *Giải thích về căn giữa bằng Flexbox*
 -Lựa chọn Flexbox làm kiểu căn giữa chính vì đây là kiểu dàn trang tự cân đối kích thước của các nội dung bên trong để hiển thị trên mọi thiết bị mà không cần căn chỉnh quá nhiều.
+
+Vì sao không nên báo riêng "sai tên đăng nhập" hay "sai mật khẩu"?
+-Nếu thông báo riêng có thể dễ gây ra việc bị người khác nắm được 1 trong 2 thông tin, từ đó bị lộ tài khoản cá nhân.
